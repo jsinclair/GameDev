@@ -53,7 +53,7 @@ int main()
 
     cout << "foo and bar completed." << endl;
 
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
@@ -61,6 +61,15 @@ int main()
     smallCircle.setFillColor(sf::Color::Red);
     smallCircle.setOrigin(10, 10);
 
+    sf::Texture texture;
+    if (!texture.loadFromFile("BabyTof.png"))
+    {
+        // error...
+    }
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
+
+    drawables.push_back(&sprite);
     drawables.push_back(&shape);
     drawables.push_back(&smallCircle);
 
