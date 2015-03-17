@@ -3,9 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "CEvent.h"
 #include "CSurface.h"
 
-class CApp {
+class CApp : public CEvent {
     private:
         bool running;
 
@@ -19,10 +20,11 @@ class CApp {
         int OnExecute();
 
     public:
-
         bool OnInit();
 
         void OnEvent(sf::Event* event);
+
+        void OnExit();
 
         void OnLoop();
 
