@@ -3,11 +3,15 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "CSurface.h"
+
 class CApp {
     private:
         bool running;
 
         sf::RenderWindow *window;
+
+        sf::Texture *testTexture;
 
     public:
         CApp();

@@ -1,6 +1,9 @@
 #include "CApp.h"
 
 CApp::CApp() {
+    window = NULL;
+    testTexture = NULL;
+
     running = true;
 }
 
