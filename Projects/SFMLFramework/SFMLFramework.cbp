@@ -53,6 +53,8 @@
 		<Unit filename="CApp_OnInit.cpp" />
 		<Unit filename="CApp_OnLoop.cpp" />
 		<Unit filename="CApp_OnRender.cpp" />
+		<Unit filename="CSurface.cpp" />
+		<Unit filename="CSurface.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
