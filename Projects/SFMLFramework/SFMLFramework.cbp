@@ -59,8 +59,8 @@
 		<Unit filename="CEntity.h" />
 		<Unit filename="CEvent.cpp" />
 		<Unit filename="CEvent.h" />
-		<Unit filename="CSurface.cpp" />
-		<Unit filename="CSurface.h" />
+		<Unit filename="CTexture.cpp" />
+		<Unit filename="CTexture.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
