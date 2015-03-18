@@ -5,7 +5,7 @@
 
 #include "CAnimation.h"
 #include "CEvent.h"
-#include "CSurface.h"
+#include "CTexture.h"
 #include "CEntity.h"
 
 class CApp : public CEvent {

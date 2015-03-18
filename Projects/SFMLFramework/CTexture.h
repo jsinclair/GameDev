@@ -1,12 +1,12 @@
-#ifndef _CSURFACE_H_
-    #define _CSURFACE_H_
+#ifndef _CTEXTURE_H_
+    #define _CTEXTURE_H_
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Rect.hpp>
 
-class CSurface {
+class CTexture {
     public:
-        CSurface();
+        CTexture();
 
     public:
         static sf::Texture* OnLoad(std::string filename);

@@ -5,11 +5,11 @@ bool CApp::OnInit() {
         return false;
     }
 
-    if ((testTexture = CSurface::OnLoad("BabyTof.png")) == NULL) {
+    if ((testTexture = CTexture::OnLoad("BabyTof.png")) == NULL) {
         return false;
     }
 
-    if ((yoshiTexture = CSurface::OnLoad("yoshi.png")) == NULL) {
+    if ((yoshiTexture = CTexture::OnLoad("yoshi.png")) == NULL) {
         return false;
     }
 

@@ -3,7 +3,7 @@
 std::vector<CEntity*> CEntity::EntityList;
 
 CEntity::CEntity() {
-    Surf_Entity = NULL;
+    texture_Entity = NULL;
 
     X = Y = 0.0f;
 
@@ -16,11 +16,11 @@ CEntity::~CEntity() {
 }
 
 bool CEntity::OnLoad(std::string File, int Width, int Height, int MaxFrames) {
-    if((Surf_Entity = CSurface::OnLoad(File)) == NULL) {
+    if((texture_Entity = CTexture::OnLoad(File)) == NULL) {
         return false;
     }
 
-//    CSurface::Transparent(Surf_Entity, 255, 0, 255);
+//    CSurface::Transparent(texture_Entity, 255, 0, 255);
 
     this->Width = Width;
     this->Height = Height;
@@ -34,9 +34,7 @@ bool CEntity::OnLoad(sf::Texture* texture, int Width, int Height, int MaxFrames)
     if(texture == NULL) {
         return false;
     }
-    Surf_Entity = texture;
-
-//    CSurface::Transparent(Surf_Entity, 255, 0, 255);
+    texture_Entity = texture;
 
     this->Width = Width;
     this->Height = Height;
@@ -51,11 +49,11 @@ void CEntity::OnLoop() {
 }
 
 void CEntity::OnRender(sf::RenderWindow* window) {
-    if(Surf_Entity == NULL || window == NULL) return;
+    if(texture_Entity == NULL || window == NULL) return;
 
-    CSurface::OnDraw(window, Surf_Entity, X, Y, AnimState * Width, Anim_Control.GetCurrentFrame() * Height, Width, Height);
+    CTexture::OnDraw(window, texture_Entity, X, Y, AnimState * Width, Anim_Control.GetCurrentFrame() * Height, Width, Height);
 }
 
 void CEntity::OnCleanup() {
-    Surf_Entity = NULL;
+    texture_Entity = NULL;
 }

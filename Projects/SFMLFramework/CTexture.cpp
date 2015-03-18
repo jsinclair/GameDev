@@ -1,11 +1,11 @@
-#include "CSurface.h"
+#include "CTexture.h"
 
 #include <iostream>
 
-CSurface::CSurface() {
+CTexture::CTexture() {
 }
 
-sf::Texture* CSurface::OnLoad(std::string filename) {
+sf::Texture* CTexture::OnLoad(std::string filename) {
     sf::Texture* texture = new sf::Texture();
 
     if(!texture->loadFromFile(filename)) {
@@ -15,17 +15,17 @@ sf::Texture* CSurface::OnLoad(std::string filename) {
     return texture;
 }
 
-bool CSurface::OnDraw(sf::RenderWindow* destWindow, sf::Texture* srcTexture, int xPos, int yPos) {
+bool CTexture::OnDraw(sf::RenderWindow* destWindow, sf::Texture* srcTexture, int xPos, int yPos) {
     if(destWindow == NULL || srcTexture == NULL) {
         return false;
     }
 
     sf::Vector2u textureSize = srcTexture->getSize();
 
-    return CSurface::OnDraw(destWindow, srcTexture, xPos, yPos, 0, 0, textureSize.x, textureSize.y);
+    return CTexture::OnDraw(destWindow, srcTexture, xPos, yPos, 0, 0, textureSize.x, textureSize.y);
 }
 
-bool CSurface::OnDraw(sf::RenderWindow* destWindow, sf::Texture* srcTexture, int xPos, int yPos, int xSub, int ySub, int subWidth, int subHeight) {
+bool CTexture::OnDraw(sf::RenderWindow* destWindow, sf::Texture* srcTexture, int xPos, int yPos, int xSub, int ySub, int subWidth, int subHeight) {
     if(destWindow == NULL || srcTexture == NULL) {
         return false;
     }

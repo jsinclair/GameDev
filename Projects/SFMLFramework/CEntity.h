@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "CAnimation.h"
-#include "CSurface.h"
+#include "CTexture.h"
 
 class CEntity {
     public:
@@ -12,7 +12,7 @@ class CEntity {
     protected:
         CAnimation      Anim_Control;
 
-        sf::Texture*    Surf_Entity;
+        sf::Texture*    texture_Entity;
 
     public:
         float           X;
