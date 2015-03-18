@@ -55,6 +55,8 @@
 		<Unit filename="CApp_OnInit.cpp" />
 		<Unit filename="CApp_OnLoop.cpp" />
 		<Unit filename="CApp_OnRender.cpp" />
+		<Unit filename="CEntity.cpp" />
+		<Unit filename="CEntity.h" />
 		<Unit filename="CEvent.cpp" />
 		<Unit filename="CEvent.h" />
 		<Unit filename="CSurface.cpp" />
