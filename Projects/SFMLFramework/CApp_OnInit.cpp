@@ -9,7 +9,7 @@ bool CApp::OnInit() {
         return false;
     }
 
-    if ((yoshiTexture = CSurface::OnLoad("yoshi.bmp")) == NULL) {
+    if ((yoshiTexture = CSurface::OnLoad("yoshi.png")) == NULL) {
         return false;
     }
 
