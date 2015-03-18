@@ -7,7 +7,11 @@ void CApp::OnRender() {
 
     CSurface::OnDraw(window, testTexture, 0, 0, 91, 9, 527, 392);
 
-    CSurface::OnDraw(window, yoshiTexture, 50, 50, 0, yoshi.GetCurrentFrame() * 64, 64, 64);
+    for(unsigned int i = 0;i < CEntity::EntityList.size();i++) {
+        if(!CEntity::EntityList[i]) continue;
+
+        CEntity::EntityList[i]->OnRender(window);
+    }
 
     window->display();
 }

@@ -6,6 +6,7 @@
 #include "CAnimation.h"
 #include "CEvent.h"
 #include "CSurface.h"
+#include "CEntity.h"
 
 class CApp : public CEvent {
     private:
@@ -17,7 +18,8 @@ class CApp : public CEvent {
 
         sf::Texture *yoshiTexture;
 
-        CAnimation yoshi;
+        CEntity entity1;
+        CEntity entity2;
 
     public:
         CApp();
