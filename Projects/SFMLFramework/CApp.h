@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "CAnimation.h"
 #include "CEvent.h"
 #include "CSurface.h"
 
@@ -13,6 +14,10 @@ class CApp : public CEvent {
         sf::RenderWindow *window;
 
         sf::Texture *testTexture;
+
+        sf::Texture *yoshiTexture;
+
+        CAnimation yoshi;
 
     public:
         CApp();

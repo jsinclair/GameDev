@@ -9,5 +9,12 @@ bool CApp::OnInit() {
         return false;
     }
 
+    if ((yoshiTexture = CSurface::OnLoad("yoshi.bmp")) == NULL) {
+        return false;
+    }
+
+    yoshi.MaxFrames = 8;
+    yoshi.Oscillate = false;
+
     return true;
 }
