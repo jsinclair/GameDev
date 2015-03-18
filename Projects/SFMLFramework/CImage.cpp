@@ -14,9 +14,17 @@ sf::Image* CImage::OnLoad(std::string filename) {
         return NULL;
     }
 
-    image->createMaskFromColor(sf::Color(255, 0, 255));
-
     CImage::images[filename] = image;
+
+    return image;
+}
+
+sf::Image* CImage::OnLoad(std::string filename, sf::Color transparentColour) {
+    sf::Image* image = CImage::OnLoad(filename);
+
+    if (image != NULL) {
+        image->createMaskFromColor(transparentColour);
+    }
 
     return image;
 }

@@ -13,6 +13,8 @@ class CImage {
 
     public:
         static sf::Image* OnLoad(std::string filename);
+
+        static sf::Image* OnLoad(std::string filename, sf::Color transparentColour);
 };
 
 #endif

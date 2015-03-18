@@ -12,7 +12,7 @@ bool CApp::OnInit() {
         return false;
     }
 
-    if(!yoshiTexture->loadFromImage(*CImage::OnLoad("yoshi.png"))) {
+    if(!yoshiTexture->loadFromImage(*CImage::OnLoad("yoshi.png", sf::Color(255, 0, 255)))) {
         return false;
     }
 
