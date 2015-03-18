@@ -46,6 +46,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="CAnimation.cpp" />
+		<Unit filename="CAnimation.h" />
 		<Unit filename="CApp.cpp" />
 		<Unit filename="CApp.h" />
 		<Unit filename="CApp_OnCleanup.cpp" />
