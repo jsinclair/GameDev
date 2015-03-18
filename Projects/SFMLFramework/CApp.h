@@ -3,9 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "CAnimation.h"
 #include "CEvent.h"
 #include "CTexture.h"
+#include "CImage.h"
 #include "CEntity.h"
 
 class CApp : public CEvent {
