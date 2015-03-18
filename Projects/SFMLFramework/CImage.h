@@ -3,18 +3,22 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <map>
+#include <unordered_map>
 
 class CImage {
     public:
         CImage();
 
-        static std::map<std::string,sf::Image*> images;
-
     public:
         static sf::Image* OnLoad(std::string filename);
 
         static sf::Image* OnLoad(std::string filename, sf::Color transparentColour);
+
+        static sf::Image* getImage(std::string filename);
+
+    private:
+
+        static std::unordered_map<std::string, sf::Image*> images;
 };
 
 #endif

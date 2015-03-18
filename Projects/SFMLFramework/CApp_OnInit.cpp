@@ -8,11 +8,13 @@ bool CApp::OnInit() {
     testTexture = new sf::Texture();
     yoshiTexture = new sf::Texture();
 
-    if(!testTexture->loadFromImage(*CImage::OnLoad("BabyTof.png"))) {
+    if (CImage::OnLoad("BabyTof.png") == NULL ||
+        !testTexture->loadFromImage(*CImage::getImage("BabyTof.png"))) {
         return false;
     }
 
-    if(!yoshiTexture->loadFromImage(*CImage::OnLoad("yoshi.png", sf::Color(255, 0, 255)))) {
+    if (CImage::OnLoad("yoshi.png", sf::Color(255, 0, 255)) == NULL ||
+        !yoshiTexture->loadFromImage(*CImage::getImage("yoshi.png"))) {
         return false;
     }
 

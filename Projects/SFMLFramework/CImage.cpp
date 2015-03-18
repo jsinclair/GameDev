@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-std::map<std::string,sf::Image*> CImage::images;
+std::unordered_map<std::string, sf::Image*> CImage::images;
 
 CImage::CImage() {
 }
@@ -27,4 +27,17 @@ sf::Image* CImage::OnLoad(std::string filename, sf::Color transparentColour) {
     }
 
     return image;
+}
+
+sf::Image* CImage::getImage(std::string filename) {
+    // Check if the entry exists in the map.
+    std::unordered_map<std::string, sf::Image*>::const_iterator got = images.find(filename);
+
+    // If it doesn't, attempt to add it.
+    if (got == images.end()) {
+        return CImage::OnLoad("BabyTof.png");
+    }
+    else {
+        return got->second;
+    }
 }
