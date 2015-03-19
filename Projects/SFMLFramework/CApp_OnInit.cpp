@@ -1,7 +1,8 @@
 #include "CApp.h"
+#include "define.h"
 
 bool CApp::OnInit() {
-    if ((window = new sf::RenderWindow(sf::VideoMode(640, 480), "SFML works!")) == NULL) {
+    if ((window = new sf::RenderWindow(sf::VideoMode(WWIDTH, WHEIGHT), "SFML works!")) == NULL) {
         return false;
     }
 

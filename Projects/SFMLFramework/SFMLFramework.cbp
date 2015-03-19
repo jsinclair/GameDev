@@ -61,8 +61,13 @@
 		<Unit filename="CEvent.h" />
 		<Unit filename="CImage.cpp" />
 		<Unit filename="CImage.h" />
+		<Unit filename="CMap.cpp" />
+		<Unit filename="CMap.h" />
 		<Unit filename="CTexture.cpp" />
 		<Unit filename="CTexture.h" />
+		<Unit filename="CTile.cpp" />
+		<Unit filename="CTile.h" />
+		<Unit filename="define.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
