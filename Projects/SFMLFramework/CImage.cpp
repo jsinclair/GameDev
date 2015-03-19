@@ -35,7 +35,7 @@ sf::Image* CImage::getImage(std::string filename) {
 
     // If it doesn't, attempt to add it.
     if (got == images.end()) {
-        return CImage::OnLoad("BabyTof.png");
+        return CImage::OnLoad(filename);
     }
     else {
         return got->second;
