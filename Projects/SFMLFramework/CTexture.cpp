@@ -15,6 +15,16 @@ sf::Texture* CTexture::OnLoad(std::string filename) {
     return texture;
 }
 
+sf::Texture* CTexture::OnLoad(sf::Image* image) {
+    sf::Texture* texture = new sf::Texture();
+
+    if(!texture->loadFromImage(*image)) {
+        return NULL;
+    }
+
+    return texture;
+}
+
 bool CTexture::OnDraw(sf::RenderWindow* destWindow, sf::Texture* srcTexture, int xPos, int yPos) {
     if(destWindow == NULL || srcTexture == NULL) {
         return false;

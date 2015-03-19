@@ -5,16 +5,23 @@ bool CApp::OnInit() {
         return false;
     }
 
-    testTexture = new sf::Texture();
-    yoshiTexture = new sf::Texture();
-
-    if (CImage::OnLoad("BabyTof.png") == NULL ||
-        !testTexture->loadFromImage(*CImage::getImage("BabyTof.png"))) {
+    if (CImage::OnLoad("BabyTof.png") == NULL) {
         return false;
     }
 
-    if (CImage::OnLoad("yoshi.png", sf::Color(255, 0, 255)) == NULL ||
-        !yoshiTexture->loadFromImage(*CImage::getImage("yoshi.png"))) {
+    if (CImage::OnLoad("yoshi.png", sf::Color(255, 0, 255)) == NULL) {
+        return false;
+    }
+
+    testTexture = CTexture::OnLoad(CImage::getImage("BabyTof.png"));
+
+    if (testTexture == NULL) {
+        return false;
+    }
+
+    yoshiTexture = CTexture::OnLoad(CImage::getImage("yoshi.png"));
+
+    if (yoshiTexture == NULL) {
         return false;
     }
 
