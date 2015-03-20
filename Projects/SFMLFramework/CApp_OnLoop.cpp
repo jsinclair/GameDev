@@ -12,7 +12,7 @@ void CApp::OnLoop() {
     }
 
     //Collision Events
-    for(int i = 0;i < CEntityCol::EntityColList.size();i++) {
+    for(unsigned int i = 0;i < CEntityCol::EntityColList.size();i++) {
         CEntity* EntityA = CEntityCol::EntityColList[i].EntityA;
         CEntity* EntityB = CEntityCol::EntityColList[i].EntityB;
 

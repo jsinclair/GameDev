@@ -290,6 +290,7 @@ bool CEntity::PosValidEntity(CEntity* Entity, int NewX, int NewY) {
 }
 
 bool CEntity::OnCollision(CEntity* Entity) {
+    return false;
 }
 
 bool CEntity::Jump() {
