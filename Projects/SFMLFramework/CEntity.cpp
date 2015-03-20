@@ -4,13 +4,6 @@
 
 std::vector<CEntity*> CEntity::EntityList;
 
-std::vector<CEntityCol> CEntityCol::EntityColList;
-
-CEntityCol::CEntityCol() {
-    EntityA = NULL;
-    EntityB = NULL;
-}
-
 CEntity::CEntity() {
     texture_Entity = NULL;
 
@@ -43,6 +36,8 @@ CEntity::CEntity() {
 
     Col_Width  = 0;
     Col_Height = 0;
+
+    CanJump = false;
 }
 
 CEntity::~CEntity() {
@@ -126,6 +121,8 @@ void CEntity::OnAnimate() {
 }
 
 void CEntity::OnMove(float MoveX, float MoveY) {
+    CanJump = false;
+
     if(MoveX == 0 && MoveY == 0) return;
 
     double NewX = 0;
@@ -160,6 +157,10 @@ void CEntity::OnMove(float MoveX, float MoveY) {
             if(PosValid((int)(X), (int)(Y + NewY))) {
                 Y += NewY;
             }else{
+                if(MoveY > 0) {
+                    CanJump = true;
+                }
+
                 SpeedY = 0;
             }
         }
@@ -288,5 +289,13 @@ bool CEntity::PosValidEntity(CEntity* Entity, int NewX, int NewY) {
     return true;
 }
 
-void CEntity::OnCollision(CEntity* Entity) {
+bool CEntity::OnCollision(CEntity* Entity) {
+}
+
+bool CEntity::Jump() {
+    if(CanJump == false) return false;
+
+    SpeedY = -MaxSpeedY;
+
+    return true;
 }

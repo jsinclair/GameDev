@@ -15,9 +15,11 @@ void CApp::OnKeyPressed(sf::Keyboard::Key key) {
         case sf::Keyboard::Left:
             Player.MoveLeft = true;
             break;
-
         case sf::Keyboard::Right:
             Player.MoveRight = true;
+            break;
+        case sf::Keyboard::Space:
+            Player.Jump();
             break;
         default:
             break;

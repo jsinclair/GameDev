@@ -41,7 +41,7 @@ bool CApp::OnInit() {
     Player2.X = 100;
 
     CEntity::EntityList.push_back(&Player);
-    //CEntity::EntityList.push_back(&Player2);
+    CEntity::EntityList.push_back(&Player2);
 
     CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
     CCamera::CameraControl.SetTarget(&Player.X, &Player.Y);

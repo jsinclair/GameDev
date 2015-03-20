@@ -15,6 +15,9 @@ CCamera::CCamera() {
     OldTime = clock.getElapsedTime().asMilliseconds();
 }
 
+/**
+This is only used if the camera moves separately from entities.
+*/
 void CCamera::OnLoop() {
     double movementMod = (double)(clock.getElapsedTime().asMilliseconds() - OldTime) / (double)FrameRate;
 

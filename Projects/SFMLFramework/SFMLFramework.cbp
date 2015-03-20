@@ -61,6 +61,7 @@
 		<Unit filename="CCamera.h" />
 		<Unit filename="CEntity.cpp" />
 		<Unit filename="CEntity.h" />
+		<Unit filename="CEntityCol.cpp" />
 		<Unit filename="CEvent.cpp" />
 		<Unit filename="CEvent.h" />
 		<Unit filename="CFPS.cpp" />
