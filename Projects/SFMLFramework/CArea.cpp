@@ -74,3 +74,31 @@ void CArea::OnRender(sf::RenderWindow* window, int CameraX, int CameraY) {
 void CArea::OnCleanup() {
     MapList.clear();
 }
+
+CMap* CArea::GetMap(int X, int Y) {
+    int MapWidth  = MAP_WIDTH * TILE_SIZE;
+    int MapHeight = MAP_HEIGHT * TILE_SIZE;
+
+    unsigned int ID = X / MapWidth;
+    ID = ID + ((Y / MapHeight) * AreaSize);
+
+    if(ID < 0 || ID >= MapList.size()) {
+        return NULL;
+    }
+
+    return &MapList[ID];
+}
+
+CTile* CArea::GetTile(int X, int Y) {
+    int MapWidth  = MAP_WIDTH * TILE_SIZE;
+    int MapHeight = MAP_HEIGHT * TILE_SIZE;
+
+    CMap* Map = GetMap(X, Y);
+
+    if(Map == NULL) return NULL;
+
+    X = X % MapWidth;
+    Y = Y % MapHeight;
+
+    return Map->GetTile(X, Y);
+}

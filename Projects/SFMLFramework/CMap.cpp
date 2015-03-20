@@ -57,3 +57,16 @@ void CMap::OnRender(sf::RenderWindow* window, int mapX, int mapY) {
         }
     }
 }
+
+CTile* CMap::GetTile(int X, int Y) {
+    unsigned int ID = 0;
+
+    ID = X / TILE_SIZE;
+    ID = ID + (MAP_WIDTH * (Y / TILE_SIZE));
+
+    if(ID < 0 || ID >= TileList.size()) {
+        return NULL;
+    }
+
+    return &TileList[ID];
+}

@@ -11,6 +11,7 @@
 #include "CTexture.h"
 #include "CImage.h"
 #include "CEntity.h"
+#include "CPlayer.h"
 
 class CApp : public CEvent {
     private:
@@ -22,8 +23,8 @@ class CApp : public CEvent {
 
         sf::Texture *yoshiTexture;
 
-        CEntity entity1;
-        CEntity entity2;
+        CPlayer Player;
+        CPlayer Player2;
 
     public:
         CApp();

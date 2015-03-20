@@ -21,6 +21,8 @@ class CMap {
         bool OnLoad(std::string file);
 
         void OnRender(sf::RenderWindow* window, int mapX, int mapY);
+
+        CTile*    GetTile(int X, int Y);
 };
 
 #endif

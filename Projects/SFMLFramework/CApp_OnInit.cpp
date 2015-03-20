@@ -30,18 +30,21 @@ bool CApp::OnInit() {
         return false;
     }
 
-    if(entity1.OnLoad(yoshiTexture, 64, 64, 8) == false) {
+    if(Player.OnLoad(yoshiTexture, 64, 64, 8) == false) {
         return false;
     }
 
-    if(entity2.OnLoad(yoshiTexture, 64, 64, 8) == false) {
+    if(Player2.OnLoad(yoshiTexture, 64, 64, 8) == false) {
         return false;
     }
 
-    entity2.X = 100;
+    Player2.X = 100;
 
-    CEntity::EntityList.push_back(&entity1);
-    CEntity::EntityList.push_back(&entity2);
+    CEntity::EntityList.push_back(&Player);
+    //CEntity::EntityList.push_back(&Player2);
+
+    CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
+    CCamera::CameraControl.SetTarget(&Player.X, &Player.Y);
 
     return true;
 }

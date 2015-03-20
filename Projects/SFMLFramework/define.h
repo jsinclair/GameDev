@@ -9,6 +9,6 @@
 #define WWIDTH        640
 #define WHEIGHT        480
 
-#define FRAMERATE   10
+#define FRAMERATE   32
 
 #endif

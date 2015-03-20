@@ -25,6 +25,10 @@ class CArea {
         void    OnRender(sf::RenderWindow* window, int CameraX, int CameraY);
 
         void    OnCleanup();
+
+        CMap*    GetMap(int X, int Y);
+
+        CTile*    GetTile(int X, int Y);
 };
 
 #endif

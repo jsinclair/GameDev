@@ -63,10 +63,14 @@
 		<Unit filename="CEntity.h" />
 		<Unit filename="CEvent.cpp" />
 		<Unit filename="CEvent.h" />
+		<Unit filename="CFPS.cpp" />
+		<Unit filename="CFPS.h" />
 		<Unit filename="CImage.cpp" />
 		<Unit filename="CImage.h" />
 		<Unit filename="CMap.cpp" />
 		<Unit filename="CMap.h" />
+		<Unit filename="CPlayer.cpp" />
+		<Unit filename="CPlayer.h" />
 		<Unit filename="CTexture.cpp" />
 		<Unit filename="CTexture.h" />
 		<Unit filename="CTile.cpp" />

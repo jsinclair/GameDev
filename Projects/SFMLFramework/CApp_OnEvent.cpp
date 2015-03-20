@@ -12,17 +12,12 @@ void CApp::OnExit() {
 
 void CApp::OnKeyPressed(sf::Keyboard::Key key) {
     switch (key) {
-        case sf::Keyboard::W:
-            CCamera::CameraControl.setVerticalMovement(UP);
+        case sf::Keyboard::Left:
+            Player.MoveLeft = true;
             break;
-        case sf::Keyboard::A:
-            CCamera::CameraControl.setHorizontalMovement(LEFT);
-            break;
-        case sf::Keyboard::S:
-            CCamera::CameraControl.setVerticalMovement(DOWN);
-            break;
-        case sf::Keyboard::D:
-            CCamera::CameraControl.setHorizontalMovement(RIGHT);
+
+        case sf::Keyboard::Right:
+            Player.MoveRight = true;
             break;
         default:
             break;
@@ -34,13 +29,11 @@ void CApp::OnKeyReleased(sf::Keyboard::Key key) {
         case sf::Keyboard::Escape:
             running = false;
             break;
-        case sf::Keyboard::D:
-        case sf::Keyboard::A:
-            CCamera::CameraControl.setHorizontalMovement(STATIONARY);
+        case sf::Keyboard::Left:
+            Player.MoveLeft = false;
             break;
-        case sf::Keyboard::W:
-        case sf::Keyboard::S:
-            CCamera::CameraControl.setVerticalMovement(STATIONARY);
+        case sf::Keyboard::Right:
+            Player.MoveRight = false;
             break;
         default:
             break;

@@ -72,12 +72,12 @@ int CCamera::GetY() {
     return Y;
 }
 
-void CCamera::SetPos(double X, double Y) {
+void CCamera::SetPos(float X, float Y) {
     this->X = X;
     this->Y = Y;
 }
 
-void CCamera::SetTarget(int* X, int* Y) {
+void CCamera::SetTarget(float* X, float* Y) {
     TargetX = X;
     TargetY = Y;
 }

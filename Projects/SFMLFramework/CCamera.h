@@ -23,11 +23,11 @@ class CCamera {
         static CCamera CameraControl;
 
     private:
-        double X;
-        double Y;
+        float X;
+        float Y;
 
-        int* TargetX;
-        int* TargetY;
+        float* TargetX;
+        float* TargetY;
 
     private:
         // movement stuff
@@ -61,9 +61,9 @@ class CCamera {
         void setVerticalMovement(int direction);
 
     public:
-        void SetPos(double X, double Y);
+        void SetPos(float X, float Y);
 
-        void SetTarget(int* X, int* Y);
+        void SetTarget(float* X, float* Y);
 };
 
 #endif
