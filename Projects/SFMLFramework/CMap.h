@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "CTile.h"
-#include "CSurface.h"
+#include "CTexture.h"
 
 class CMap {
     public:
@@ -19,7 +19,6 @@ class CMap {
 
     public:
         bool OnLoad(std::string file);
-        bool OnLoad(sf::Texture* texture);
 
         void OnRender(sf::RenderWindow* window, int mapX, int mapY);
 };

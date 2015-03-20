@@ -9,5 +9,7 @@ void CApp::OnCleanup() {
 
     CEntity::EntityList.clear();
 
+    CArea::AreaControl.OnCleanup();
+
     window->close();
 }

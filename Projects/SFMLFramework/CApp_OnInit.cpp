@@ -26,6 +26,10 @@ bool CApp::OnInit() {
         return false;
     }
 
+    if(CArea::AreaControl.OnLoad("./maps/1.area") == false) {
+        return false;
+    }
+
     if(entity1.OnLoad(yoshiTexture, 64, 64, 8) == false) {
         return false;
     }

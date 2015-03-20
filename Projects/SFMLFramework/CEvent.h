@@ -13,6 +13,8 @@ class CEvent {
         virtual void OnEvent(sf::Event* event);
 
         virtual void OnExit();
+
+        virtual void OnKeyDown(sf::Keyboard::Key key);
 };
 
 #endif

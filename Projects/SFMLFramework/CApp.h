@@ -3,6 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Define.h"
+
+#include "CArea.h"
+#include "CCamera.h"
 #include "CEvent.h"
 #include "CTexture.h"
 #include "CImage.h"
@@ -31,13 +35,17 @@ class CApp : public CEvent {
 
         void OnEvent(sf::Event* event);
 
-        void OnExit();
-
         void OnLoop();
 
         void OnRender();
 
         void OnCleanup();
+
+    public:
+        // Event mothods
+        void OnExit();
+
+        virtual void OnKeyDown(sf::Keyboard::Key key);
 };
 
 #endif
