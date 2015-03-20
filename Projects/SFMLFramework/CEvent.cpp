@@ -13,7 +13,11 @@ void CEvent::OnEvent(sf::Event* event) {
             OnExit();
             break;
         case sf::Event::KeyPressed:
-            OnKeyDown(event->key.code);
+            OnKeyPressed(event->key.code);
+            break;
+        case sf::Event::KeyReleased:
+            OnKeyReleased(event->key.code);
+            break;
         default:
             break;
     }
@@ -23,6 +27,10 @@ void CEvent::OnExit() {
     // Virtual, not actually going to be called
 }
 
-void CEvent::OnKeyDown(sf::Keyboard::Key key) {
+void CEvent::OnKeyPressed(sf::Keyboard::Key key) {
+    // Virtual, not actually going to be called
+}
+
+void CEvent::OnKeyReleased(sf::Keyboard::Key key) {
     // Virtual, not actually going to be called
 }

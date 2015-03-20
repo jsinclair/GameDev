@@ -20,8 +20,6 @@ bool CEntity::OnLoad(std::string File, int Width, int Height, int MaxFrames) {
         return false;
     }
 
-//    CSurface::Transparent(texture_Entity, 255, 0, 255);
-
     this->Width = Width;
     this->Height = Height;
 

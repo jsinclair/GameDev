@@ -6,4 +6,6 @@ void CApp::OnLoop() {
 
         CEntity::EntityList[i]->OnLoop();
     }
+
+    CCamera::CameraControl.OnLoop();
 }

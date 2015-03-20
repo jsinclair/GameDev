@@ -45,7 +45,9 @@ class CApp : public CEvent {
         // Event mothods
         void OnExit();
 
-        virtual void OnKeyDown(sf::Keyboard::Key key);
+        virtual void OnKeyPressed(sf::Keyboard::Key key);
+
+        virtual void OnKeyReleased(sf::Keyboard::Key key);
 };
 
 #endif
