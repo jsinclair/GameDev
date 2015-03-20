@@ -12,10 +12,4 @@ void CApp::OnLoop() {
     }
 
     CCamera::CameraControl.OnLoop();
-
-    std::cout << "CCamera::CameraControl.GetX(): " << CCamera::CameraControl.GetX() << std::endl;
-    std::cout << "CCamera::CameraControl.GetY(): " << CCamera::CameraControl.GetY() << std::endl;
-    std::cout << "CCamera::CameraControl.GetX(): " << CCamera::CameraControl.GetX() << std::endl;
-    std::cout << "Player.X: " << Player.X << std::endl;
-    std::cout << "Player.Y: " << Player.Y << std::endl;
 }
