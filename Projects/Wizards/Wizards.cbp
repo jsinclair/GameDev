@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Wizards" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Wizards" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="-DSFML_STATIC" />
+					<Add directory="../../Libraries/SFML-2.2/include" />
+				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics-s" />
+					<Add library="sfml-window-s" />
+					<Add library="sfml-system-s" />
+					<Add library="glew" />
+					<Add library="freetype" />
+					<Add library="jpeg" />
+					<Add library="opengl32" />
+					<Add library="gdi32" />
+					<Add library="winmm" />
+					<Add directory="../../Libraries/SFML-2.2/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Wizards" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="BabyTof.png" />
+		<Unit filename="CAnimation.cpp" />
+		<Unit filename="CAnimation.h" />
+		<Unit filename="CApp.cpp" />
+		<Unit filename="CApp.h" />
+		<Unit filename="CApp_OnCleanup.cpp" />
+		<Unit filename="CApp_OnEvent.cpp" />
+		<Unit filename="CApp_OnInit.cpp" />
+		<Unit filename="CApp_OnLoop.cpp" />
+		<Unit filename="CApp_OnRender.cpp" />
+		<Unit filename="CArea.cpp" />
+		<Unit filename="CArea.h" />
+		<Unit filename="CCamera.cpp" />
+		<Unit filename="CCamera.h" />
+		<Unit filename="CEntity.cpp" />
+		<Unit filename="CEntity.h" />
+		<Unit filename="CEntityCol.cpp" />
+		<Unit filename="CEvent.cpp" />
+		<Unit filename="CEvent.h" />
+		<Unit filename="CFPS.cpp" />
+		<Unit filename="CFPS.h" />
+		<Unit filename="CImage.cpp" />
+		<Unit filename="CImage.h" />
+		<Unit filename="CMap.cpp" />
+		<Unit filename="CMap.h" />
+		<Unit filename="CNPC.h" />
+		<Unit filename="CPlayer.cpp" />
+		<Unit filename="CPlayer.h" />
+		<Unit filename="CSkeleton.cpp" />
+		<Unit filename="CSkeleton.h" />
+		<Unit filename="CTexture.cpp" />
+		<Unit filename="CTexture.h" />
+		<Unit filename="CTile.cpp" />
+		<Unit filename="CTile.h" />
+		<Unit filename="define.h" />
+		<Unit filename="maps/1.area" />
+		<Unit filename="maps/1.map" />
+		<Unit filename="tileset.png" />
+		<Unit filename="tilesets/1.png" />
+		<Unit filename="yoshi.old.png" />
+		<Unit filename="yoshi.png" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
