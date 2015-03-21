@@ -46,6 +46,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="BabyTof.png" />
 		<Unit filename="CAnimation.cpp" />
 		<Unit filename="CAnimation.h" />
 		<Unit filename="CApp.cpp" />
@@ -77,6 +78,12 @@
 		<Unit filename="CTile.cpp" />
 		<Unit filename="CTile.h" />
 		<Unit filename="define.h" />
+		<Unit filename="maps/1.area" />
+		<Unit filename="maps/1.map" />
+		<Unit filename="tileset.png" />
+		<Unit filename="tilesets/1.png" />
+		<Unit filename="yoshi.old.png" />
+		<Unit filename="yoshi.png" />
 		<Extensions>
 			<code_completion />
 			<envvars />
