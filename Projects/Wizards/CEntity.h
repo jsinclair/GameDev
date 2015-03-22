@@ -60,8 +60,7 @@ class CEntity {
         float        AccelY;
 
     public:
-        float        MaxSpeedX;
-        float        MaxSpeedY;
+        float        MaxSpeed;
 
     protected:
         int          CurrentFrameCol;

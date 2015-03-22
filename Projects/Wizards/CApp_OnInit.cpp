@@ -55,6 +55,19 @@ bool CApp::OnInit() {
     CEntity::EntityList.push_back(&Player);
     CEntity::EntityList.push_back(&npc);
 
+    for (int i = 0; i < 5; i++) {
+        CSkeleton *skele = new CSkeleton();
+        skele->owner = &Player;
+
+        if(skele->OnLoad(skeleTexture, 25, 48, 3) == false) {
+            return false;
+        }
+
+        skele->X = i * 200;
+
+        CEntity::EntityList.push_back(skele);
+    }
+
     CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
     CCamera::CameraControl.SetTarget(&Player.X, &Player.Y);
 

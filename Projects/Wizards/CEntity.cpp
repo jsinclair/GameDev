@@ -1,6 +1,7 @@
 #include "CEntity.h"
 
 #include <iostream>
+#include <math.h>
 
 std::vector<CEntity*> CEntity::EntityList;
 
@@ -27,8 +28,7 @@ CEntity::CEntity() {
     AccelX = 0;
     AccelY = 0;
 
-    MaxSpeedX = 10;
-    MaxSpeedY = 10;
+    MaxSpeed = 10;
 
     CurrentFrameCol = 0;
     CurrentFrameRow = 0;
@@ -110,20 +110,24 @@ void CEntity::OnLoop() {
         }
     }
 
-//    if(Flags & ENTITY_FLAG_GRAVITY) {
-//        AccelY = 0.75f;
-//    }
-
     SpeedX += AccelX * CFPS::FPSControl.GetSpeedFactor();
     SpeedY += AccelY * CFPS::FPSControl.GetSpeedFactor();
 
-    if(SpeedX > MaxSpeedX)  SpeedX =  MaxSpeedX;
-    if(SpeedX < -MaxSpeedX) SpeedX = -MaxSpeedX;
-    if(SpeedY > MaxSpeedY)  SpeedY =  MaxSpeedY;
-    if(SpeedY < -MaxSpeedY) SpeedY = -MaxSpeedY;
+    if(SpeedX > MaxSpeed)  SpeedX =  MaxSpeed;
+    if(SpeedX < -MaxSpeed) SpeedX = -MaxSpeed;
+    if(SpeedY > MaxSpeed)  SpeedY =  MaxSpeed;
+    if(SpeedY < -MaxSpeed) SpeedY = -MaxSpeed;
 
     OnAnimate();
-    OnMove(SpeedX, SpeedY);
+
+    // Work out the total speed, and reduce it if the entity is moving too fast.
+    float totalSpeed = std::sqrt(SpeedX*SpeedX + SpeedY*SpeedY);
+    float mod  = 1;
+    if (totalSpeed > MaxSpeed) {
+        mod = MaxSpeed / totalSpeed;
+    }
+
+    OnMove(SpeedX * mod, SpeedY * mod);
 }
 
 void CEntity::OnRender(sf::RenderWindow* window) {
