@@ -122,7 +122,7 @@ void CEntity::OnLoop() {
 
     // Work out the total speed, and reduce it if the entity is moving too fast.
     float totalSpeed = std::sqrt(SpeedX*SpeedX + SpeedY*SpeedY);
-    float mod  = 1;
+    float mod = 1;
     if (totalSpeed > MaxSpeed) {
         mod = MaxSpeed / totalSpeed;
     }

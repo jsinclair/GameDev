@@ -64,6 +64,7 @@ bool CApp::OnInit() {
         }
 
         skele->X = i * 200;
+        skele->Y = i * 75;
 
         CEntity::EntityList.push_back(skele);
     }
