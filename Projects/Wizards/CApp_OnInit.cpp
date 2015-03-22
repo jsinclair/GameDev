@@ -2,7 +2,7 @@
 #include "define.h"
 
 bool CApp::OnInit() {
-    if ((window = new sf::RenderWindow(sf::VideoMode(WWIDTH, WHEIGHT), "SFML works!")) == NULL) {
+    if ((window = new sf::RenderWindow(sf::VideoMode(WWIDTH, WHEIGHT), "Wizards")) == NULL) {
         return false;
     }
 
