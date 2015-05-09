@@ -14,7 +14,7 @@ bool CApp::OnInit() {
         return false;
     }
 
-    if (CImage::OnLoad("skeleton.png") == NULL) {
+    if (CImage::OnLoad("skeleton.png", sf::Color(255, 255, 255)) == NULL) {
         return false;
     }
 

@@ -19,6 +19,14 @@ enum {
 };
 
 enum {
+    ENTITY_MOVEMENT_NONE = 0,
+
+    ENTITY_MOVEMENT_TARGET,
+
+    ENTITY_MOVEMENT_TOGGLE
+};
+
+enum {
     ENTITY_FLAG_NONE     = 0,
 
     ENTITY_FLAG_GHOST    = 0x00000001,
@@ -48,6 +56,7 @@ class CEntity {
 
     public:
         int        Type;
+        int        movementType;
 
         bool       Dead;
         int        Flags;
@@ -58,6 +67,9 @@ class CEntity {
 
         float        AccelX;
         float        AccelY;
+
+        float targetX;
+        float targetY;
 
     public:
         float        MaxSpeed;
@@ -106,6 +118,12 @@ class CEntity {
         bool     PosValidTile(CTile* Tile);
 
         bool     PosValidEntity(CEntity* Entity, int NewX, int NewY);
+
+    private:
+        // Movement calculation methods
+        void calculateToggleMovement();
+
+        void calculateTargetMovement();
 };
 
 class CEntityCol {

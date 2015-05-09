@@ -1,6 +1,7 @@
 #include "CPlayer.h"
 
 CPlayer::CPlayer() {
+    movementType = ENTITY_MOVEMENT_TOGGLE;
 }
 
 bool CPlayer::OnLoad(std::string  File, int Width, int Height, int MaxFrames) {

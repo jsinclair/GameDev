@@ -22,6 +22,8 @@ CEntity::CEntity() {
     Dead = false;
     Flags = ENTITY_FLAG_MAPONLY;
 
+    movementType = ENTITY_MOVEMENT_NONE;
+
     SpeedX = 0;
     SpeedY = 0;
 
@@ -38,6 +40,9 @@ CEntity::CEntity() {
 
     Col_Width  = 0;
     Col_Height = 0;
+
+    targetX = 0.0f;
+    targetY = 0.0f;
 }
 
 CEntity::~CEntity() {
@@ -68,46 +73,11 @@ bool CEntity::OnLoad(sf::Texture* texture, int Width, int Height, int MaxFrames)
 }
 
 void CEntity::OnLoop() {
-    if(MoveLeft) {
-        AccelX = -0.5;
+    if (movementType == ENTITY_MOVEMENT_TOGGLE) {
+        calculateToggleMovement();
     }
-    else if(MoveRight) {
-        AccelX = 0.5;
-    }
-    else {
-        if(SpeedX > 0) {
-            AccelX = -1;
-        }
-
-        if(SpeedX < 0) {
-            AccelX =  1;
-        }
-
-        if(SpeedX < 2.0f && SpeedX > -2.0f) {
-            AccelX = 0;
-            SpeedX = 0;
-        }
-    }
-
-    if(MoveUp) {
-        AccelY = -0.5;
-    }
-    else if(MoveDown) {
-        AccelY = 0.5;
-    }
-    else {
-        if(SpeedY > 0) {
-            AccelY = -1;
-        }
-
-        if(SpeedY < 0) {
-            AccelY =  1;
-        }
-
-        if(SpeedY < 2.0f && SpeedY > -2.0f) {
-            AccelY = 0;
-            SpeedY = 0;
-        }
+    else if (movementType == ENTITY_MOVEMENT_TARGET) {
+        calculateTargetMovement();
     }
 
     SpeedX += AccelX * CFPS::FPSControl.GetSpeedFactor();
@@ -304,4 +274,72 @@ bool CEntity::PosValidEntity(CEntity* Entity, int NewX, int NewY) {
 
 bool CEntity::OnCollision(CEntity* Entity) {
     return false;
+}
+
+void CEntity::calculateToggleMovement() {
+    if(MoveLeft) {
+        if(SpeedX > 0) {
+            AccelX = -1.5;
+        }
+        else {
+            AccelX = -0.5;
+        }
+    }
+    else if(MoveRight) {
+        if(SpeedX < 0) {
+            AccelX = 1.5;
+        }
+        else {
+            AccelX = 0.5;
+        }
+    }
+    else {
+        if(SpeedX > 0) {
+            AccelX = -1;
+        }
+
+        if(SpeedX < 0) {
+            AccelX =  1;
+        }
+
+        if(SpeedX < 2.0f && SpeedX > -2.0f) {
+            AccelX = 0;
+            SpeedX = 0;
+        }
+    }
+
+    if(MoveUp) {
+        if(SpeedY > 0) {
+            AccelY = -1.5;
+        }
+        else {
+            AccelY = -0.5;
+        }
+    }
+    else if(MoveDown) {
+        if(SpeedY < 0) {
+            AccelY = 1.5;
+        }
+        else {
+            AccelY = 0.5;
+        }
+    }
+    else {
+        if(SpeedY > 0) {
+            AccelY = -1;
+        }
+
+        if(SpeedY < 0) {
+            AccelY = 1;
+        }
+
+        if(SpeedY < 2.0f && SpeedY > -2.0f) {
+            AccelY = 0;
+            SpeedY = 0;
+        }
+    }
+}
+
+void CEntity::calculateTargetMovement() {
+
 }
