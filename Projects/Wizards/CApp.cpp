@@ -32,6 +32,9 @@ CPlayer CApp::getPlayer() {
     return CApp::Player;
 }
 
+/*
+ * The main method from which the entire app is called.
+ */
 int main(int argc, char* argv[]) {
     CApp theApp;
 
