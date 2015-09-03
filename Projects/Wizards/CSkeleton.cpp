@@ -6,6 +6,8 @@
 
 CSkeleton::CSkeleton() {
     owner = NULL;
+
+    movementType = ENTITY_MOVEMENT_TOGGLE;
 }
 
 void CSkeleton::OnLoop() {
